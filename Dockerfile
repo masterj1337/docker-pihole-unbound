@@ -1,4 +1,4 @@
-#ARG PIHOLE_VERSION
+ARG PIHOLE_VERSION
 FROM pihole/pihole:${PIHOLE_VERSION:-latest}
 RUN apt update && apt install -y unbound wget nano
 
