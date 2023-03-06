@@ -8,6 +8,7 @@ COPY pihole-unbound/99-edns.conf /etc/dnsmasq.d/99-edns.conf
 RUN mkdir -p /etc/services.d/unbound
 COPY pihole-unbound/unbound-run /etc/services.d/unbound/run
 RUN wget https://www.internic.net/domain/named.root -qO- | sudo tee /var/lib/unbound/root.hints
+RUN apt install -y nano
 
 ENTRYPOINT ./s6-init
 
